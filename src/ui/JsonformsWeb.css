@@ -1,0 +1,63 @@
+
+
+/*-- Survey Title */
+#root__title{
+    font-weight: bold;
+    font-size: x-large;  
+    padding-bottom:5px;
+  }
+  
+  /*-- Survey Description */
+  #root__description{
+    font-weight: normal;
+    font-size: small;
+    padding-bottom:10px;
+  }
+  
+  /*-- Form */
+  div.jsonschema-to-jsonform-root div.form-group.field.field-string{  
+    display: block !important;
+    width: 100% !important;
+    padding-bottom:10px !important;
+  }
+  
+  /*-- Control Label */
+  div.jsonschema-to-jsonform-root label.control-label{  
+    padding-bottom:4px !important;  
+  } 
+  
+  /*--Radio Control */
+  div.jsonschema-to-jsonform-root div.radio{
+    display: block !important;
+  }
+  
+  div.jsonschema-to-jsonform-root div.radio input{
+    display: inline !important;
+  }
+  
+  div.jsonschema-to-jsonform-root div.radio label span span{
+    margin-left:8px;  
+    font-weight:normal;
+    position:relative;
+    bottom:14px !important;
+  }
+  
+  /*--CheckBox Control */
+  div.jsonschema-to-jsonform-root div.checkbox{
+    display: block !important;
+  }
+  
+  div.jsonschema-to-jsonform-root div.checkbox input{
+    display: inline !important;
+  }
+  
+  div.jsonschema-to-jsonform-root div.checkbox label span span{
+    margin-left:8px;  
+    font-weight:normal;
+    position:relative;
+    bottom:14px !important;
+  }
+  
+  
+  
+  
