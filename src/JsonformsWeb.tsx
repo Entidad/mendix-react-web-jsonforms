@@ -1,6 +1,6 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode, createElement  } from "react";
 import { JsonformsWebContainerProps } from "../typings/JsonformsWebProps";
-import { vanillaCells, vanillaRenderers } from '@jsonforms/vanilla-renderers';
+import { vanillaRenderers, vanillaCells } from '@jsonforms/vanilla-renderers';
 import { JsonForms } from '@jsonforms/react';
 
 import "./ui/JsonformsWeb.css";
@@ -29,55 +29,6 @@ const getCircularReplacer = () => {
     };
 };
 
-const schemaX = {
-    type: 'object',
-    properties: {
-      name: {
-        type: 'string',
-        minLength: 1,
-      },
-      done: {
-        type: 'boolean',
-      },
-      due_date: {
-        type: 'string',
-        format: 'date',
-      },
-      recurrence: {
-        type: 'string',
-        enum: ['Never', 'Daily', 'Weekly', 'Monthly'],
-      },
-    },
-    required: ['name', 'due_date'],
-  };
-  const uischemaX = {
-    type: 'VerticalLayout',
-    elements: [
-      {
-        type: 'Control',
-        label: false,
-        scope: '#/properties/done',
-      },
-      {
-        type: 'Control',
-        scope: '#/properties/name',
-      },
-      {
-        type: 'HorizontalLayout',
-        elements: [
-          {
-            type: 'Control',
-            scope: '#/properties/due_date',
-          },
-          {
-            type: 'Control',
-            scope: '#/properties/recurrence',
-          },
-        ],
-      },
-    ],
-  };
-
 export class JsonformsWeb extends Component<JsonformsWebContainerProps, AppState> {
     constructor(props: any) {
         super(props);
@@ -93,33 +44,27 @@ export class JsonformsWeb extends Component<JsonformsWebContainerProps, AppState
         };
     }
 
-    
 
     render(): ReactNode {
-
-        const onChange = (errors:any, data:any) => {
-            if(errors){
+        
+        const onChange = (data:any, errors:any) => {
+            if(errors && errors!=null && errors.length>0 && errors[0]){
+                console.debug(errors);
                 console.error("Using the specified JSON schema, a JSON form error occurred.");
             }else{
-                const onSubmitJson = JSON.stringify(data, getCircularReplacer());
-                const jsonString: string = JSON.stringify(JSON.parse(onSubmitJson).formData);
-                if (this.props.mxFormData.value == jsonString) {
-                    this.setState({ errorShow: true });
-                    this.setState({ errorMessage: "Form values entered match those in the database." });
-                }
-                this.props.mxFormData.setValue(jsonString);
+                console.debug(data);
+               
             }
         };
-
         return (
                 <div className="jsonschema-to-jsonform-root">
                     <JsonForms
-                        schema={schemaX}
-                        uischema={uischemaX}
+                        schema={JSON.parse(this.state.schema)}
+                        uischema={JSON.parse(this.state.uischema)}
                         data={JSON.parse(this.state.initData)}
                         renderers={vanillaRenderers}
                         cells={vanillaCells}
-                        onChange={({ errors, data }) => onChange(errors, data)}
+                        onChange={({ data, errors }) => onChange(data, errors)}
                     />
                     <div className="JSONViewer">
                         {this.state.errorShow && (
@@ -213,11 +158,13 @@ export class JsonformsWeb extends Component<JsonformsWebContainerProps, AppState
 
 }
 
+
 function isValidJSON(jsonString: string) {
     try {
         JSON.parse(jsonString);
         return undefined;
     } catch (e) {
+        console.debug("Not Valid JSON:"+e.message)
         return e.message;
     }
 }

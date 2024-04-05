@@ -45,7 +45,7 @@
             </property>		
             <property key="mxFormData" type="attribute" required="true" onChange="onChangeAction">
                 <caption>formData</caption>
-                <description>Containing the data after submit the form</description>
+                <description>Containing the all the data chaged in the form</description>
                 <attributeTypes>
                     <attributeType name="String"/>
                 </attributeTypes>
@@ -54,7 +54,7 @@
         <propertyGroup caption="Events">
             <property key="onChangeAction" type="action" required="false">
                 <caption>On change action</caption>
-                <description>Action to trigger when submit the JSON Form</description>
+                <description>Action to trigger when make changes on JSON Form</description>
             </property>
         </propertyGroup>
     </properties>
