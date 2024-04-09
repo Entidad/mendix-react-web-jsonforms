@@ -9,7 +9,7 @@
     <properties>
         <propertyGroup caption="General">
             <property key="mxSchema" type="attribute" required="true">
-                <caption>JSON Schema</caption>
+                <caption>Schema</caption>
                 <description>An attribute to fetch JSON Schema</description>
                 <attributeTypes>
                     <attributeType name="String"/>
@@ -45,7 +45,7 @@
             </property>		
             <property key="mxFormData" type="attribute" required="true" onChange="onChangeAction">
                 <caption>formData</caption>
-                <description>Containing the all the data chaged in the form</description>
+                <description>Containing all the data chaged in the form</description>
                 <attributeTypes>
                     <attributeType name="String"/>
                 </attributeTypes>
