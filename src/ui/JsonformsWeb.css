@@ -21,25 +21,25 @@
     padding-bottom:10px !important;
   }
   
-  /*-- Control Label */
-  div.jsonschema-to-jsonform-root label.control-label{  
+  /*-- Control */
+  div.jsonschema-to-jsonform-root div.control{  
+    padding-bottom:10px !important;  
+  }   
+  div.jsonschema-to-jsonform-root div.control label{  
     padding-bottom:4px !important;  
   } 
   
   /*--Radio Control */
   div.jsonschema-to-jsonform-root div.radio{
     display: block !important;
-  }
-  
-  div.jsonschema-to-jsonform-root div.radio input{
-    display: inline !important;
-  }
-  
-  div.jsonschema-to-jsonform-root div.radio label span span{
-    margin-left:8px;  
+  }  
+  div.jsonschema-to-jsonform-root label.radio-label{
     font-weight:normal;
-    position:relative;
-    bottom:14px !important;
+    padding-left:8px !important;
+  }
+  div.jsonschema-to-jsonform-root div.radio-option{
+    display:flex;
+    margin-top:4px;
   }
   
   /*--CheckBox Control */

@@ -5,10 +5,6 @@ var get = require('lodash.get');
 
 export function Form(props:any){
 
-    console.log("Props1:"+props);
-    console.log("PropsS:"+props.schema);
-    console.log("PropsU:"+props.uischema);
-    console.log("PropsD:"+props.initData);
     const [dato, setDato] = useState(props.initData);   
 
     if(props.language && props.language!="none"){
