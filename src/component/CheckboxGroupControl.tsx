@@ -53,31 +53,5 @@ export const checkboxControlTester: RankedTester = rankWith(
     )
   )
 );
-
-
-
 export default withVanillaControlProps(withJsonFormsMultiEnumProps(checkboxGroupControl));
 
-
-/*
-uiTypeIs('Control'),
-  schemaMatches(schema =>
-    !_.isEmpty(schema)
-    && schema.type === 'array'
-    && !_.isEmpty(schema.items)
-    && !Array.isArray(schema.items)
-
-    export const checkboxControlTester: RankedTester = rankWith(
-  2,
-  and(
-    uiTypeIs('Control'),    
-    schemaMatches(schema =>
-      !_.isEmpty(schema)
-      && schema.type === 'array'
-      && !_.isEmpty(schema.items)
-      && !Array.isArray(schema.items)
-    )
-  )
-);
-
-    */

@@ -43,6 +43,11 @@
   }
   
   /*--CheckBox Control */
+  div.jsonschema-to-jsonform-root div.checkboxgroupctrl div div label{
+    margin-left:8px;  
+    font-weight:normal
+  }  
+  
   div.jsonschema-to-jsonform-root div.checkbox{
     display: block !important;
   }

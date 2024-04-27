@@ -38,6 +38,11 @@ export class CheckboxGroupControl extends Control<
       flexDirection: 'column'
     };
 
+    const rowStyle: { [x: string]: any } = {
+      display: 'flex',
+      flexDirection: 'row'
+    };
+
     const appliedUiSchemaOptions = merge({}, config, uischema.options);
     const showDescription = !isDescriptionHidden(
       visible,
@@ -78,7 +83,7 @@ export class CheckboxGroupControl extends Control<
 
     return (
       <div
-        className={classNames.wrapper}
+        className='checkboxgroupctrl'
         hidden={!visible}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
@@ -93,7 +98,7 @@ export class CheckboxGroupControl extends Control<
 
         <div style={groupStyle}>
           {options && options.map((optionValue:string) => (
-            <div key={optionValue}>
+            <div key={optionValue} style={rowStyle}>
               <input
                 type='checkbox'
                 value={optionValue}
