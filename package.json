@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": "^10.5.0",
-    "@types/big.js": "^6.0.2"
+    "@types/big.js": "^6.0.2",
+    "@types/lodash": "^4.17.0"
   },
   "dependencies": {
     "@jsonforms/core": "^3.2.1",

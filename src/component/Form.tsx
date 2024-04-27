@@ -3,6 +3,14 @@ import { vanillaRenderers, vanillaCells } from '@jsonforms/vanilla-renderers';
 import { JsonForms } from '@jsonforms/react';
 var get = require('lodash.get');
 
+
+import CheckboxGroupControl, {checkboxControlTester} from './CheckboxGroupControl';
+const renderers = [
+    ...vanillaRenderers,    
+    { tester: checkboxControlTester, renderer: CheckboxGroupControl }
+];
+
+
 export function Form(props:any){
 
     const [dato, setDato] = useState(props.initData);   
@@ -19,7 +27,7 @@ export function Form(props:any){
                     schema={JSON.parse(props.schema)}
                     uischema={JSON.parse(props.uischema)}
                     data={JSON.parse(dato)}
-                    renderers={vanillaRenderers}
+                    renderers={renderers}
                     cells={vanillaCells}
                     i18n={{locale: props.language, translate: translation}}
                     onChange={({ data, errors }) => {
@@ -36,7 +44,7 @@ export function Form(props:any){
                     schema={JSON.parse(props.schema)}
                     uischema={JSON.parse(props.uischema)}
                     data={dato}
-                    renderers={vanillaRenderers}
+                    renderers={renderers}
                     cells={vanillaCells}
                     onChange={({ data, errors }) => {
                         setDato(data);
