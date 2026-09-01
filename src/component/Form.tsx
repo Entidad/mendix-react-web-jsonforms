@@ -43,11 +43,11 @@ export function Form(props:any){
                 <JsonForms
                     schema={JSON.parse(props.schema)}
                     uischema={JSON.parse(props.uischema)}
-                    data={dato}
+                    data={JSON.parse(dato)}
                     renderers={renderers}
                     cells={vanillaCells}
                     onChange={({ data, errors }) => {
-                        setDato(data);
+                        setDato(JSON.stringify(data));
                         props._onChange(data, errors);
                     }}
                 />

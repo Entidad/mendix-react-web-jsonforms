@@ -38,7 +38,7 @@
             </property>		
             <property key="mxLanguage" type="attribute" required="true">
                 <caption>Language</caption>
-                <description>The code of default language in which to display the form</description>
+                <description>Which language to display the form in. Used verbatim as the top-level key into the i18n attribute, so it must match one of that object's keys exactly (e.g. "English", not "en"). Leave empty to render untranslated.</description>
                 <attributeTypes>
                     <attributeType name="String"/>
                 </attributeTypes>
