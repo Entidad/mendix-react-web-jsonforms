@@ -1,4 +1,4 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode } from "react";
 import { JsonformsWebContainerProps } from "../typings/JsonformsWebProps";
 import { Form } from "../src/component/Form";
 import "./ui/JsonformsWeb.css";

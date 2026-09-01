@@ -1,4 +1,4 @@
-import { createElement, useState } from "react";
+import { useState } from "react";
 import { vanillaRenderers, vanillaCells } from '@jsonforms/vanilla-renderers';
 import { JsonForms } from '@jsonforms/react';
 var get = require('lodash.get');

@@ -3,8 +3,8 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix Widgets Framework Team
  */
-import { CSSProperties } from "react";
 import { EditableValue } from "mendix";
+import { CSSProperties } from "react";
 
 export interface JsonformsWebContainerProps {
     name: string;
@@ -28,6 +28,8 @@ export interface JsonformsWebPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+    renderMode: "design" | "xray" | "structure";
+    translate: (text: string) => string;
     mxSchema: string;
     mxUiSchema: string;
     mxInitData: string;
